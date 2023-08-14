@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "55b600f0-acee-4e54-80af-3b752c7e1f08",
+		"name": "Subscription",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19000432"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Enes Kömür",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "enes@echoenes.dev",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/register",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "enes@echoenes.dev",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "enes@echoenes.dev",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/user",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/{id}/subscription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "renewed_at",
+							"value": "2023-08-13 21:11:57",
+							"type": "text"
+						},
+						{
+							"key": "expired_at",
+							"value": "2023-09-13 21:11:57",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/user/1/subscription",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"1",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/{id}/subscription/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "renewed_at",
+							"value": "2023-08-13 21:11:58",
+							"type": "text"
+						},
+						{
+							"key": "expired_at",
+							"value": "2023-09-13 21:11:58",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/user/1/subscription/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"1",
+						"subscription",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/{id}/subscription/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{URL}}/api/user/1/subscription/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"1",
+						"subscription",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/{id}/transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "subscription_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "59.99",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/api/user/1/transaction",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"1",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{URL}}/api/user/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
